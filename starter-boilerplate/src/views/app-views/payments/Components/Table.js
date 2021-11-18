@@ -45,7 +45,7 @@ const TableCustom = styled(Table)`
 
 const LeaderboardData = [
   {
-    key: "1",
+    key: "1x",
     Name: "John Brown",
     date: "11/18 22:53",
     statusClaim: true,
@@ -56,7 +56,7 @@ const LeaderboardData = [
     destinationMatch: "Perfect",
   },
   {
-    key: "2",
+    key: "2x",
     Name: "John Brown",
     date: "11/18 22:53",
     statusClaim: true,
@@ -67,7 +67,7 @@ const LeaderboardData = [
     destinationMatch: "Perfect",
   },
   {
-    key: "3",
+    key: "3x",
     Name: "John Brown",
     date: "11/18 22:53",
     statusClaim: true,
@@ -78,7 +78,7 @@ const LeaderboardData = [
     destinationMatch: "Perfect",
   },
   {
-    key: "4",
+    key: "4x",
     Name: "John Brown",
     date: "11/18 22:53",
     statusClaim: true,
@@ -89,7 +89,7 @@ const LeaderboardData = [
     destinationMatch: "Perfect",
   },
   {
-    key: "5",
+    key: "5x",
     Name: "John Brown",
     date: "11/18 22:53",
     statusClaim: true,
@@ -100,7 +100,7 @@ const LeaderboardData = [
     destinationMatch: "Perfect",
   },
   {
-    key: "6",
+    key: "6x",
     Name: "John Brown",
     date: "11/18 22:53",
     statusClaim: true,
@@ -111,7 +111,7 @@ const LeaderboardData = [
     destinationMatch: "Perfect",
   },
   {
-    key: "7",
+    key: "7x",
     Name: "John Brown",
     date: "11/18 22:53",
     statusClaim: true,
@@ -122,7 +122,7 @@ const LeaderboardData = [
     destinationMatch: "Perfect",
   },
   {
-    key: "8",
+    key: "8x",
     Name: "John Brown",
     date: "11/18 22:53",
     statusClaim: true,
@@ -133,7 +133,7 @@ const LeaderboardData = [
     destinationMatch: "Perfect",
   },
   {
-    key: "9",
+    key: "9x",
     Name: "John Brown",
     date: "11/18 22:53",
     statusClaim: true,
