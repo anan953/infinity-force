@@ -1,13 +1,10 @@
 import React from "react";
 import { Table } from "antd";
 import styled from "styled-components";
-
+import { Claimed, Unclaimed } from "./ClaimStatus";
+import { Paid, Unpaid, Pending } from "./PaymentStatus";
 const Wrapper = styled.div`
   margin-top: 30px;
-`;
-
-const ColumnTextGold = styled.span`
-  color: #ff8b00;
 `;
 
 const BtnEdit = styled.div`
@@ -23,14 +20,13 @@ const BtnEdit = styled.div`
   cursor: pointer;
 `;
 
-const ColumnText = styled.div`
+const DataText = styled.div`
   font-family: Neue Haas Unica Pro;
-  font-size: 13px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 13.33px;
   line-height: 20px;
-  letter-spacing: 0.4000000059604645px;
-  text-align: left;
+  letter-spacing: 0.4px;
   color: #252733;
 `;
 
@@ -42,6 +38,12 @@ const TableCustom = styled(Table)`
     padding: 15px 25px;
   }
 `;
+
+const MAPPING_ICON = {
+  pending: <Pending />,
+  unpaid: <Unpaid />,
+  paid: <Paid />,
+};
 
 const LeaderboardData = [
   {
@@ -59,22 +61,22 @@ const LeaderboardData = [
     key: "2x",
     Name: "John Brown",
     date: "11/18 22:53",
-    statusClaim: true,
+    statusClaim: false,
     totalAcc: "2343 SLP",
     scholarShare: "1343 SLP",
     managerShare: "1000 SLP",
-    paymentStatus: "paid",
+    paymentStatus: "unpaid",
     destinationMatch: "Perfect",
   },
   {
     key: "3x",
     Name: "John Brown",
     date: "11/18 22:53",
-    statusClaim: true,
+    statusClaim: false,
     totalAcc: "2343 SLP",
     scholarShare: "1343 SLP",
     managerShare: "1000 SLP",
-    paymentStatus: "paid",
+    paymentStatus: "pending",
     destinationMatch: "Perfect",
   },
   {
@@ -85,7 +87,7 @@ const LeaderboardData = [
     totalAcc: "2343 SLP",
     scholarShare: "1343 SLP",
     managerShare: "1000 SLP",
-    paymentStatus: "paid",
+    paymentStatus: "pending",
     destinationMatch: "Perfect",
   },
   {
@@ -103,7 +105,7 @@ const LeaderboardData = [
     key: "6x",
     Name: "John Brown",
     date: "11/18 22:53",
-    statusClaim: true,
+    statusClaim: false,
     totalAcc: "2343 SLP",
     scholarShare: "1343 SLP",
     managerShare: "1000 SLP",
@@ -246,7 +248,7 @@ const LeaderboardData = [
     key: "14",
     Name: "John Brown",
     date: "11/18 22:53",
-    statusClaim: true,
+    statusClaim: false,
     totalAcc: "2343 SLP",
     scholarShare: "1343 SLP",
     managerShare: "1000 SLP",
@@ -261,29 +263,29 @@ function TableData() {
       title: "Name",
       dataIndex: "Name",
       key: "Name",
-      align: "center",
-      render: (text) => <ColumnText>{text}</ColumnText>,
+      align: "left",
+      render: (text) => <DataText>{text}</DataText>,
     },
     {
       title: "Next Claim",
       dataIndex: "date",
       key: "date",
       align: "center",
-      render: (text) => <ColumnTextGold>{text}</ColumnTextGold>,
+      render: (text) => <DataText>{text}</DataText>,
     },
     {
       title: "Claim Status",
       dataIndex: "statusClaim",
       key: "statusClaim",
       align: "center",
-      render: (text) => <ColumnText>{text}</ColumnText>,
+      render: (statusClaim) => <div className="d-flex justify-content-center align-items-center	">{statusClaim ? <Claimed /> : <Unclaimed />}</div>,
     },
     {
       title: "Account Total",
       dataIndex: "totalAcc",
       key: "totalAcc",
       align: "center",
-      render: (text) => <ColumnText>{text}</ColumnText>,
+      render: (text) => <DataText>{text}</DataText>,
     },
     {
       title: "Scholar Share",
@@ -291,28 +293,28 @@ function TableData() {
       key: "scholarShare",
       align: "center",
 
-      render: (text) => <ColumnText>{text}</ColumnText>,
+      render: (text) => <DataText>{text}</DataText>,
     },
     {
       title: "Manager Share",
       dataIndex: "managerShare",
       key: "managerShare",
       align: "center",
-      render: (text) => <ColumnText>{text}</ColumnText>,
+      render: (text) => <DataText>{text}</DataText>,
     },
     {
       title: "Payment Status",
       dataIndex: "paymentStatus",
       key: "paymentStatus",
       align: "center",
-      render: (text) => <ColumnText>{text}</ColumnText>,
+      render: (paymentStatus) => <div className="d-flex justify-content-center align-items-center	">{MAPPING_ICON[paymentStatus]}</div>,
     },
     {
       title: "Destination Match",
       dataIndex: "destinationMatch",
       key: "destinationMatch",
       align: "center",
-      render: (text) => <ColumnText>{text}</ColumnText>,
+      render: (text) => <DataText>{text}</DataText>,
     },
     {
       title: "Action",
