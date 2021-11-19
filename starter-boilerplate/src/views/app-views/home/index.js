@@ -251,6 +251,13 @@ const LeaderboardColumns = [
 ];
 
 const ColumnTextGold = styled.span`
+  font-family: Neue Haas Unica Pro;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.4000000059604645px;
+  text-align: left;
   color: #ff8b00;
 `;
 
@@ -263,6 +270,7 @@ const ColumnText = styled.span`
   letter-spacing: 0.4000000059604645px;
   text-align: left;
   color: #252733;
+  backgound-color: #fafafa;
 `;
 
 const CardContent = styled.div`
@@ -418,12 +426,14 @@ const ScholarEmail = styled.p`
   margin: 0;
 `;
 
+const Wrapper = styled.div``;
+
 const Home = () => {
   function handleChange(value) {
     console.log(`selected ${value}`);
   }
   return (
-    <div>
+    <Wrapper>
       <div style={{ padding: "30px" }}>
         <Row gutter={40}>
           <Col span={8}>
@@ -488,9 +498,6 @@ const Home = () => {
               defaultValue="year"
               style={{
                 width: 88,
-                border: "none",
-                borderRadius: "12px",
-                backgroundColor: "#FAFAFA",
                 fontFamily: "Eurostile",
                 fontSize: "16px",
                 fontStyle: "normal",
@@ -499,16 +506,7 @@ const Home = () => {
               }}
               onChange={handleChange}
             >
-              <Option
-                style={{
-                  border: "none",
-                  borderRadius: "12px",
-                  backgroundColor: "#FAFAFA",
-                }}
-                value="week"
-              >
-                Week
-              </Option>
+              <Option value="week">Week</Option>
               <Option value="year">Year</Option>
               <Option value="month">Month</Option>
             </Select>
@@ -524,7 +522,11 @@ const Home = () => {
         <Col span={18}>
           <TableWrapper>
             <TableTitle>Leaderboard</TableTitle>
-            <Table columns={LeaderboardColumns} dataSource={LeaderboardData} />
+            <Table
+              columns={LeaderboardColumns}
+              dataSource={LeaderboardData}
+              pagination={false}
+            />
           </TableWrapper>
         </Col>
         <Col span={6}>
@@ -568,7 +570,7 @@ const Home = () => {
           </LatestScholar>
         </Col>
       </Row>
-    </div>
+    </Wrapper>
   );
 };
 
