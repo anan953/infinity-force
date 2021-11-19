@@ -47,10 +47,10 @@ function SearchSection() {
   return (
     <Wrapper>
       <Row gutter={[16, 0]}>
-        <Col span={4}>
+        <Col lg={4} md={0} sm={0} xs={0}>
           <Button>ADD SCHOLAR</Button>
         </Col>
-        <Col span={20}>
+        <Col lg={20} md={24} sm={24} xs={24}>
           <InputCustom size="small" prefix={<CustomIcon className="text-primary font-size-xl" svg={IconSearch} />} placeholder="Search scholar here..." />
         </Col>
       </Row>

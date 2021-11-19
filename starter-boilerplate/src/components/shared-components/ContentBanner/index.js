@@ -9,6 +9,7 @@ const CardContent = styled.div`
   border: 1px solid #dddfe5;
   border-radius: 12px;
   cursor: pointer;
+  width: 100%;
 `;
 
 const CardData = styled.span`

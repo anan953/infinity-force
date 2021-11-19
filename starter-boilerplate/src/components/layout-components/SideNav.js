@@ -16,6 +16,7 @@ const { Sider } = Layout;
 
 export const SideNav = ({ navCollapsed, sideNavTheme, routeInfo, hideGroupTitle, localization = true }) => {
   const props = { sideNavTheme, routeInfo, hideGroupTitle, localization };
+  console.log("🚀 ~ file: SideNav.js ~ line 19 ~ SideNav ~ props", props);
   return (
     <Sider className={`side-nav ${sideNavTheme === SIDE_NAV_DARK ? "side-nav-dark" : ""}`} width={SIDE_NAV_WIDTH} collapsed={navCollapsed}>
       <WrapperLogo>

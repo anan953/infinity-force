@@ -41,12 +41,12 @@ function Payments() {
   ]);
 
   const [listButton, setListButton] = useState([
-    { id: 1, active: false, text: "UPLOAD FROM EXCEL" },
-    { id: 2, active: false, text: "VIEW LOGS" },
-    { id: 3, active: false, text: "REFRESH" },
-    { id: 4, active: false, text: "CLAIM REWARDS" },
-    { id: 5, active: false, text: "PAY" },
-    { id: 6, active: false, text: "DELETE", isWarning: true },
+    { id: 1, active: false, showMobile: false, text: "UPLOAD FROM EXCEL" },
+    { id: 2, active: false, showMobile: false, text: "VIEW LOGS" },
+    { id: 3, active: false, showMobile: true, text: "REFRESH" },
+    { id: 4, active: false, showMobile: true, text: "CLAIM REWARDS" },
+    { id: 5, active: false, showMobile: true, text: "PAY" },
+    { id: 6, active: false, showMobile: false, text: "DELETE", isWarning: true },
   ]);
 
   const changeActive = (id) => {
@@ -55,9 +55,9 @@ function Payments() {
 
   return (
     <div>
-      <Row gutter={[32, 0]}>
+      <Row gutter={[32, 8]}>
         {listDetail.map((item, i) => (
-          <Col span={8} key={i}>
+          <Col lg={8} md={24} sm={24} xs={24} key={i}>
             <ContentBanner iconSvg={item.icon} number={item.number} text={item.text} />
           </Col>
         ))}
@@ -66,12 +66,18 @@ function Payments() {
       <SearchSection />
 
       <ListBtnSection>
-        <Row gutter={[16, 0]}>
-          {listButton.map((item) => (
-            <Col span={4}>
-              <NodeButton {...item} changeActive={changeActive} />
-            </Col>
-          ))}
+        <Row gutter={[16, 8]}>
+          {listButton.map((item, i) =>
+            item.showMobile ? (
+              <Col lg={4} md={8} sm={8} xs={8} key={i}>
+                <NodeButton {...item} changeActive={changeActive} />
+              </Col>
+            ) : (
+              <Col lg={4} md={0} sm={0} xs={0} key={i}>
+                <NodeButton {...item} changeActive={changeActive} />
+              </Col>
+            )
+          )}
         </Row>
       </ListBtnSection>
 
