@@ -5,6 +5,7 @@ import { Claimed, Unclaimed } from "./ClaimStatus";
 import { Paid, Unpaid, Pending } from "./PaymentStatus";
 const Wrapper = styled.div`
   margin-top: 30px;
+  position: relative;
 `;
 
 const BtnEdit = styled.div`
@@ -36,6 +37,25 @@ const TableCustom = styled(Table)`
     box-sizing: border-box;
     border-radius: 12px;
     padding: 15px 25px;
+  }
+
+  &.ant-table-thead {
+    background: linear-gradient(0deg, #fafafa, #fafafa);
+    border-radius: 12px;
+  }
+`;
+
+const Paging = styled.div`
+  font-family: Neue Haas Unica Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  color: #9d9b9c;
+  position: absolute;
+  bottom: 0;
+  & > b {
+    color: #1a3353;
   }
 `;
 
@@ -326,6 +346,10 @@ function TableData() {
   return (
     <Wrapper>
       <TableCustom rowKey="key" pagination={{ pageSize: 6 }} rowSelection={{ type: "checkbox" }} columns={LeaderboardColumns} dataSource={LeaderboardData} />
+
+      <Paging>
+        Showing <b>1-6</b> from <b>{LeaderboardData.length}</b> data
+      </Paging>
     </Wrapper>
   );
 }
