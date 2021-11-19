@@ -22,7 +22,7 @@ const BtnEdit = styled.div`
 `;
 
 const DataText = styled.div`
-  font-family: Neue Haas Unica Pro;
+  font-family: Neue;
   font-style: normal;
   font-weight: 500;
   font-size: 13.33px;
@@ -46,7 +46,7 @@ const TableCustom = styled(Table)`
 `;
 
 const Paging = styled.div`
-  font-family: Neue Haas Unica Pro;
+  font-family: Neue;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -298,7 +298,11 @@ function TableData() {
       dataIndex: "statusClaim",
       key: "statusClaim",
       align: "center",
-      render: (statusClaim) => <div className="d-flex justify-content-center align-items-center	">{statusClaim ? <Claimed /> : <Unclaimed />}</div>,
+      render: (statusClaim) => (
+        <div className="d-flex justify-content-center align-items-center	">
+          {statusClaim ? <Claimed /> : <Unclaimed />}
+        </div>
+      ),
     },
     {
       title: "Account Total",
@@ -327,7 +331,11 @@ function TableData() {
       dataIndex: "paymentStatus",
       key: "paymentStatus",
       align: "center",
-      render: (paymentStatus) => <div className="d-flex justify-content-center align-items-center	">{MAPPING_ICON[paymentStatus]}</div>,
+      render: (paymentStatus) => (
+        <div className="d-flex justify-content-center align-items-center	">
+          {MAPPING_ICON[paymentStatus]}
+        </div>
+      ),
     },
     {
       title: "Destination Match",
@@ -345,7 +353,13 @@ function TableData() {
 
   return (
     <Wrapper>
-      <TableCustom rowKey="key" pagination={{ pageSize: 6 }} rowSelection={{ type: "checkbox" }} columns={LeaderboardColumns} dataSource={LeaderboardData} />
+      <TableCustom
+        rowKey="key"
+        pagination={{ pageSize: 6 }}
+        rowSelection={{ type: "checkbox" }}
+        columns={LeaderboardColumns}
+        dataSource={LeaderboardData}
+      />
 
       <Paging>
         Showing <b>1-6</b> from <b>{LeaderboardData.length}</b> data

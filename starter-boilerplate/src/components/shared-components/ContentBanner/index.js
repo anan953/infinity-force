@@ -24,12 +24,12 @@ const DataTitle = styled.p`
   line-height: 18px;
   letter-spacing: 0.4000000059604645px;
   text-align: left;
-  color: #929292;
+  color: #929292;s
   margin-bottom: 8px;
 `;
 
 const DataNumber = styled.p`
-  font-family: Neue Haas Unica Pro;
+  font-family: Neue;
   font-size: 36px;
   font-style: normal;
   font-weight: 700;

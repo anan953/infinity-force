@@ -18057,7 +18057,7 @@ table tr th.ant-table-selection-column .ant-radio-wrapper {
   background-color: #fff;
   background-clip: padding-box;
   border: 0;
-  border-radius: 0.625rem;
+  border-radius: 0;
   box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
     0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
   pointer-events: auto;
