@@ -251,7 +251,7 @@ const LeaderboardColumns = [
 ];
 
 const ColumnTextGold = styled.span`
-  font-family: Neue Haas Unica Pro;
+  font-family: Neue, Arial, serif;
   font-size: 13px;
   font-style: normal;
   font-weight: 700;
@@ -262,7 +262,7 @@ const ColumnTextGold = styled.span`
 `;
 
 const ColumnText = styled.span`
-  font-family: Neue Haas Unica Pro;
+  font-family: Neue, Arial, serif;
   font-size: 13px;
   font-style: normal;
   font-weight: 700;
@@ -286,7 +286,7 @@ const CardData = styled.span`
 `;
 
 const DataTitle = styled.p`
-  font-family: Eurostile;
+  font-family: Eurostile, Arial, serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -298,7 +298,7 @@ const DataTitle = styled.p`
 `;
 
 const DataNumber = styled.p`
-  font-family: Neue Haas Unica Pro;
+  font-family: Neue, Arial, serif;
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
@@ -328,7 +328,7 @@ const LatestScholar = styled.div`
 `;
 
 const TableTitle = styled.p`
-  font-family: Eurostile;
+  font-family: Eurostile, Arial, serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -345,7 +345,7 @@ const ChartHeader = styled.div`
 `;
 
 const ChartTitle = styled.span`
-  font-family: Neue Haas Unica Pro;
+  font-family: Neue, Arial, serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -370,7 +370,7 @@ const ChartHeaderRight = styled.span`
   align-items: center;
 `;
 const LegendText = styled.span`
-  font-family: Eurostile;
+  font-family: Eurostile, Arial, serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -382,7 +382,7 @@ const LegendText = styled.span`
 `;
 
 const LatestScholarText = styled.span`
-  font-family: Eurostile;
+  font-family: Eurostile, Arial, serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -403,7 +403,7 @@ const ScholarText = styled.span`
 `;
 
 const ScholarName = styled.p`
-  font-family: Neue Haas Unica Pro;
+  font-family: Neue, Arial, serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -415,7 +415,7 @@ const ScholarName = styled.p`
 `;
 
 const ScholarEmail = styled.p`
-  font-family: Neue Haas Unica Pro;
+  font-family: Neue, Arial, serif;
   font-size: 13px;
   font-style: normal;
   font-weight: 700;
@@ -498,7 +498,7 @@ const Home = () => {
               defaultValue="year"
               style={{
                 width: 88,
-                fontFamily: "Eurostile",
+                fontFamily: "Eurostile , Arial, serif",
                 fontSize: "16px",
                 fontStyle: "normal",
                 fontWeight: 700,
