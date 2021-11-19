@@ -61,7 +61,7 @@ export const AppLayout = ({ navCollapsed, navType, location, direction }) => {
           </div>
         </Layout>
       </Layout>
-      {isMobile && <MobileNav />}
+      {isMobile && <MobileNav routeInfo={currentRouteInfo} />}
     </Layout>
   );
 };
