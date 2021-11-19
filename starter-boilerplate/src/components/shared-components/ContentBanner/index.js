@@ -10,6 +10,10 @@ const CardContent = styled.div`
   border-radius: 12px;
   cursor: pointer;
   width: 100%;
+
+  &:hover {
+    background: #ff8b00;
+  }
 `;
 
 const CardData = styled.span`
@@ -24,8 +28,12 @@ const DataTitle = styled.p`
   line-height: 18px;
   letter-spacing: 0.4000000059604645px;
   text-align: left;
-  color: #929292;s
+  color: #929292;
   margin-bottom: 8px;
+
+  ${CardContent}:hover & {
+    color: #231f20;
+  }
 `;
 
 const DataNumber = styled.p`
@@ -38,12 +46,18 @@ const DataNumber = styled.p`
   text-align: left;
   color: #252733;
   margin: 0;
+
+  ${CardContent}:hover & {
+    color: #ffffff;
+  }
 `;
+
+const Icon = styled(CustomIcon)``;
 
 function ContentBanner({ iconSvg, number, text }) {
   return (
-    <CardContent>
-      <CustomIcon className="text-primary font-size-xl" svg={iconSvg} />
+    <CardContent className="hover-icon">
+      <Icon className="text-primary font-size-xl " svg={iconSvg} />
       <CardData>
         <DataTitle>{text}</DataTitle>
         <DataNumber>{number}</DataNumber>

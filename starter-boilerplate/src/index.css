@@ -44,6 +44,10 @@
   fill: #ff8b00;
 }
 
+.hover-icon:hover path {
+  fill: #ffffff;
+}
+
 @media only screen and (max-width: 576px) {
   .icon-mobile svg {
     width: 18px;
