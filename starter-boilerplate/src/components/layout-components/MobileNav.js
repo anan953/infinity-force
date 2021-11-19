@@ -1,13 +1,6 @@
 import React from "react";
-import { Row, Col } from "antd";
 import { connect } from "react-redux";
-import { NAV_TYPE_SIDE } from "constants/ThemeConstant";
-import { Scrollbars } from "react-custom-scrollbars";
-import MenuContent from "./MenuContent";
 import { onMobileNavToggle } from "redux/actions/Theme";
-import Logo from "./Logo";
-import Flex from "components/shared-components/Flex";
-import { ArrowLeftOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import navigationConfig from "configs/NavigationConfig";
 import CustomIcon from "components/util-components/CustomIcon";
@@ -22,6 +15,7 @@ const Wrapper = styled.div`
   border: 1px solid #dddfe5;
   box-sizing: border-box;
   display: flex;
+  z-index: 999;
 `;
 
 const IconMenu = styled.div`

@@ -43,3 +43,9 @@
 .active-icon-mobile path {
   fill: #ff8b00;
 }
+
+@media only screen and (max-width: 576px) {
+  .icon-mobile svg {
+    width: 18px;
+  }
+}

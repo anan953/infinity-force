@@ -29636,6 +29636,7 @@ ul.anticons-list li.copied::after {
 @media only screen and (max-width: 768px) {
   .app-content {
     padding: 15px;
+    padding-bottom: 80px
   }
 }
 .inner-app-layout {
