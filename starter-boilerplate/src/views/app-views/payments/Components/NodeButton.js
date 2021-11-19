@@ -13,13 +13,19 @@ const Wrapper = styled.div`
   align-items: center;
   cursor: pointer;
   color: #ff8b00;
+  white-space: nowrap;
+  padding: 10px;
 
   ${(props) =>
     props.isWarning &&
     css`
       background: #e43700;
       color: #ffffff;
-    `}
+    `};
+
+  @media only screen and (max-width: 576px) {
+    font-size: 11.1392px;
+  }
 `;
 
 function NodeButton({ id, active, text, changeActive, isWarning }) {

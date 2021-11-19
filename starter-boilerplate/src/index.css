@@ -48,4 +48,8 @@
   .icon-mobile svg {
     width: 18px;
   }
+
+  .d-none-mobile {
+    display: none !important;
+  }
 }
