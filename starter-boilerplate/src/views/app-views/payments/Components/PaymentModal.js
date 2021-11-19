@@ -214,7 +214,7 @@ const CancelBtn = styled.span`
   cursor: pointer;
 `;
 
-function PaymentModal({ isShowModal, closeModal }) {
+function PaymentModal({ isShowModal, closeModal, handleCancel }) {
   return (
     <div>
       <Modal
@@ -224,6 +224,7 @@ function PaymentModal({ isShowModal, closeModal }) {
         closable={false}
         width={570}
         style={{ borderRadius: "0px" }}
+        onCancel={handleCancel}
       >
         <ModalContent>
           <ModalTitle>Add Scholar</ModalTitle>

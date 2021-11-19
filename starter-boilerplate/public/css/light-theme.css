@@ -29602,7 +29602,7 @@ ul.anticons-list li.copied::after {
 }
 .app-content {
   padding: 25px;
-  margin-top: 70px;
+  /* margin-top: 70px; */
   min-height: calc(100vh - 130px);
   position: relative;
 }

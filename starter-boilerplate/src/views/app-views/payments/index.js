@@ -82,13 +82,17 @@ function Payments() {
       listButton.map((item) => ({ ...item, active: item.id === id }))
     );
   };
-  const [isShowModal, setIsShowModal] = useState(true);
+  const [isShowModal, setIsShowModal] = useState(false);
 
   const showModal = () => {
     setIsShowModal(true);
   };
 
   const closeModal = () => {
+    setIsShowModal(false);
+  };
+
+  const handleCancel = () => {
     setIsShowModal(false);
   };
 
@@ -127,7 +131,11 @@ function Payments() {
       <TableData />
 
       {/* Modal section */}
-      <PaymentModal isShowModal={isShowModal} closeModal={closeModal} />
+      <PaymentModal
+        isShowModal={isShowModal}
+        closeModal={closeModal}
+        handleCancel={handleCancel}
+      />
     </div>
   );
 }
