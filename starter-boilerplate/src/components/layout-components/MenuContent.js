@@ -76,6 +76,19 @@ const SLPIcon = () => (
   </svg>
 );
 
+const NightModeIcon = () => (
+  <svg
+    width="56"
+    height="24"
+    viewBox="0 0 56 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="56" height="24" rx="12" fill="#E5E5E5" />
+    <circle cx="12" cy="12" r="10" fill="white" />
+  </svg>
+);
+
 const WrapperIcon = styled.div`
   margin-right: 10px;
   transform: translate(0, 8px);
@@ -89,11 +102,20 @@ const WrapperItem = styled.div`
 const UnderSidebar = styled.div``;
 
 const CoinInfo = styled.div`
-  margin: 20px 0;
+  margin: 15px 0;
   padding: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+const ThemeMode = styled.div`
+  padding: 0 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 2px;
 `;
 
 const CoinPrice = styled.span`
@@ -118,6 +140,18 @@ const CoinPercent = styled.span`
   letter-spacing: 0.002em;
   text-align: left;
   color: #ec3131;
+`;
+
+const NightModeText = styled.span`
+  font-family: Neue;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.002em;
+  text-align: left;
+  color: #929292;
+  margin-left: 10px;
 `;
 
 const { SubMenu } = Menu;
@@ -160,7 +194,6 @@ const SideNavContent = (props) => {
         theme={sideNavTheme === SIDE_NAV_LIGHT ? "light" : "dark"}
         mode="inline"
         style={{
-          height: "45%",
           borderRight: 0,
           borderBottom: "1px solid #DDDFE5",
         }}
@@ -231,6 +264,7 @@ const SideNavContent = (props) => {
           )
         )}
       </Menu>
+
       <UnderSidebar>
         <CoinInfo>
           <CustomIcon className="text-primary font-size-xl" svg={EthIcon} />
@@ -251,6 +285,11 @@ const SideNavContent = (props) => {
           <CoinPercent>-0.3%</CoinPercent>
         </CoinInfo>
       </UnderSidebar>
+
+      <ThemeMode>
+        <CustomIcon className="text-primary font-size-xl" svg={NightModeIcon} />
+        <NightModeText>Night Mode</NightModeText>
+      </ThemeMode>
     </>
   );
 };

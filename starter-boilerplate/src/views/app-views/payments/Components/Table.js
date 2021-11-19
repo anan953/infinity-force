@@ -2,7 +2,7 @@ import React from "react";
 import { Table } from "antd";
 import styled from "styled-components";
 import { Claimed, Unclaimed } from "./ClaimStatus";
-import { Paid, Unpaid, Pending } from "./PaymentStatus";
+import { Paid, Unpaid, Pending, Perfect, Error, HoldOn } from "./PaymentStatus";
 const Wrapper = styled.div`
   margin-top: 30px;
   position: relative;
@@ -70,6 +70,12 @@ const MAPPING_ICON = {
   paid: <Paid />,
 };
 
+const MAPPING_DESTINATION = {
+  Perfect: <Perfect />,
+  Error: <Error />,
+  HoldOn: <HoldOn />,
+};
+
 const LeaderboardData = [
   {
     key: "1x",
@@ -91,7 +97,7 @@ const LeaderboardData = [
     scholarShare: "1343 SLP",
     managerShare: "1000 SLP",
     paymentStatus: "unpaid",
-    destinationMatch: "Perfect",
+    destinationMatch: "HoldOn",
   },
   {
     key: "3x",
@@ -102,7 +108,7 @@ const LeaderboardData = [
     scholarShare: "1343 SLP",
     managerShare: "1000 SLP",
     paymentStatus: "pending",
-    destinationMatch: "Perfect",
+    destinationMatch: "Error",
   },
   {
     key: "4x",
@@ -303,7 +309,11 @@ function TableData() {
       dataIndex: "statusClaim",
       key: "statusClaim",
       align: "center",
-      render: (statusClaim) => <div className="d-flex justify-content-center align-items-center	">{statusClaim ? <Claimed /> : <Unclaimed />}</div>,
+      render: (statusClaim) => (
+        <div className="d-flex justify-content-center align-items-center	">
+          {statusClaim ? <Claimed /> : <Unclaimed />}
+        </div>
+      ),
     },
     {
       title: "Account Total",
@@ -332,14 +342,18 @@ function TableData() {
       dataIndex: "paymentStatus",
       key: "paymentStatus",
       align: "center",
-      render: (paymentStatus) => <div className="d-flex justify-content-center align-items-center	">{MAPPING_ICON[paymentStatus]}</div>,
+      render: (paymentStatus) => (
+        <div className="d-flex justify-content-center align-items-center	">
+          {MAPPING_ICON[paymentStatus]}
+        </div>
+      ),
     },
     {
       title: "Destination Match",
       dataIndex: "destinationMatch",
       key: "destinationMatch",
       align: "center",
-      render: (text) => <DataText>{text}</DataText>,
+      render: (text) => <span>{MAPPING_DESTINATION[text]}</span>,
     },
     {
       title: "Action",
@@ -350,7 +364,13 @@ function TableData() {
 
   return (
     <Wrapper>
-      <TableCustom rowKey="key" pagination={{ pageSize: 6 }} rowSelection={{ type: "checkbox" }} columns={LeaderboardColumns} dataSource={LeaderboardData} />
+      <TableCustom
+        rowKey="key"
+        pagination={{ pageSize: 6 }}
+        rowSelection={{ type: "checkbox" }}
+        columns={LeaderboardColumns}
+        dataSource={LeaderboardData}
+      />
 
       <Paging>
         Showing <b>1-6</b> from <b>{LeaderboardData.length}</b> data
