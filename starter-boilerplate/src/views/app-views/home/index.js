@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Table, Tag, Space, Col, Row } from "antd";
+import { Table, Avatar, Space, Col, Row, Select } from "antd";
 import CustomIcon from "components/util-components/CustomIcon";
 import Chart from "react-apexcharts";
 import { COLOR_1, COLOR_2 } from "constants/ChartConstant";
+
+const { Option } = Select;
 
 const TotalSLPEarnedIcon = () => (
   <svg width="52" height="62" viewBox="0 0 52 62" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,6 +31,18 @@ const TotalManagerSLPIcon = () => (
       d="M57.7895 48.7975V52.0081C57.7895 55.5396 54.9 58.4291 51.3684 58.4291H6.42105C4.71808 58.4291 3.08486 57.7526 1.88068 56.5484C0.676502 55.3443 0 53.711 0 52.0081V7.0607C0 5.35773 0.676502 3.72451 1.88068 2.52033C3.08486 1.31615 4.71808 0.639648 6.42105 0.639648H51.3684C54.9 0.639648 57.7895 3.52912 57.7895 7.0607V10.2712H28.8947C27.1918 10.2712 25.5585 10.9477 24.3544 12.1519C23.1502 13.3561 22.4737 14.9893 22.4737 16.6923V42.3765C22.4737 44.0795 23.1502 45.7127 24.3544 46.9169C25.5585 48.121 27.1918 48.7975 28.8947 48.7975H57.7895ZM28.8947 42.3765H61V16.6923H28.8947V42.3765ZM41.7368 34.3502C39.0721 34.3502 36.9211 32.1991 36.9211 29.5344C36.9211 26.8696 39.0721 24.7186 41.7368 24.7186C44.4016 24.7186 46.5526 26.8696 46.5526 29.5344C46.5526 32.1991 44.4016 34.3502 41.7368 34.3502Z"
       fill="#FF8B00"
     />
+  </svg>
+);
+
+const ScholarLegendIcon = () => (
+  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12.0342" r="12" fill="#FF8B00" />
+  </svg>
+);
+
+const ManagerLegendIcon = () => (
+  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12.0342" r="12" fill="#83B5D1" />
   </svg>
 );
 
@@ -82,21 +96,7 @@ const SLPEarnedData = {
       categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"],
     },
     legend: {
-      position: "top",
-      horizontalAlign: "right",
-    },
-    title: {
-      text: "SLP Earned (3,361 Scholars)",
-      style: {
-        fontFamily: "Neue Haas Unica Pro",
-        fontSize: "20px",
-        fontStyle: "normal",
-        fontWeight: 700,
-        lineHeight: "30px",
-        letterSpacing: "0.4000000059604645px",
-        textAlign: "left",
-        color: "#252733",
-      },
+      show: false,
     },
   },
 };
@@ -273,6 +273,12 @@ const TableWrapper = styled.div`
   padding: 32px;
 `;
 
+const LatestScholar = styled.div`
+  border: 1px solid #dddfe5;
+  border-radius: 12px;
+  padding: 32px;
+`;
+
 const TableTitle = styled.p`
   font-family: Eurostile;
   font-size: 20px;
@@ -285,7 +291,97 @@ const TableTitle = styled.p`
   margin-bottom: 24px;
 `;
 
+const ChartHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const ChartTitle = styled.span`
+  font-family: Neue Haas Unica Pro;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.4000000059604645px;
+  text-align: left;
+  color: #252733;
+`;
+
+const ChartLegendWrapper = styled.span`
+  margin-left: 24px;
+  display: flex;
+  align-items: center;
+`;
+const ChartLegend = styled.span`
+  margin-right: 48px;
+  display: flex;
+`;
+const ChartHeaderRight = styled.span`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+const LegendText = styled.span`
+  font-family: Eurostile;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.4000000059604645px;
+  text-align: left;
+  color: #252733;
+  margin-left: 12px;
+`;
+
+const LatestScholarText = styled.span`
+  font-family: Eurostile;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.4000000059604645px;
+  text-align: left;
+  color: #252733;
+`;
+
+const ScholarInfo = styled.div`
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+`;
+
+const ScholarText = styled.span`
+  margin-left: 12px;
+`;
+
+const ScholarName = styled.p`
+  font-family: Neue Haas Unica Pro;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.4000000059604645px;
+  text-align: left;
+  color: #252733;
+  margin-bottom: 8px;
+`;
+
+const ScholarEmail = styled.p`
+  font-family: Neue Haas Unica Pro;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.4000000059604645px;
+  text-align: left;
+  color: #929292;
+  margin: 0;
+`;
+
 const Home = () => {
+  function handleChange(value) {
+    console.log(`selected ${value}`);
+  }
   return (
     <div>
       <div style={{ padding: "30px" }}>
@@ -320,7 +416,50 @@ const Home = () => {
         </Row>
       </div>
       <LineChartWrapper>
-        <Chart options={SLPEarnedData.options} series={SLPEarnedData.series} height={300} />
+        <ChartHeader>
+          <ChartTitle>SLP Earned (3,361 Scholars)</ChartTitle>
+          <ChartHeaderRight>
+            <ChartLegend>
+              <ChartLegendWrapper>
+                <CustomIcon className="text-primary font-size-xl" svg={ScholarLegendIcon} />
+                <LegendText>Scholars</LegendText>
+              </ChartLegendWrapper>
+              <ChartLegendWrapper>
+                <CustomIcon className="text-primary font-size-xl" svg={ManagerLegendIcon} />
+                <LegendText>Manager</LegendText>
+              </ChartLegendWrapper>
+            </ChartLegend>
+            <Select
+              defaultValue="year"
+              style={{
+                width: 88,
+                border: "none",
+                borderRadius: "12px",
+                backgroundColor: "#FAFAFA",
+                fontFamily: "Eurostile",
+                fontSize: "16px",
+                fontStyle: "normal",
+                fontWeight: 700,
+                color: "#929292",
+              }}
+              onChange={handleChange}
+            >
+              <Option
+                style={{
+                  border: "none",
+                  borderRadius: "12px",
+                  backgroundColor: "#FAFAFA",
+                }}
+                value="week"
+              >
+                Week
+              </Option>
+              <Option value="year">Year</Option>
+              <Option value="month">Month</Option>
+            </Select>
+          </ChartHeaderRight>
+        </ChartHeader>
+        <Chart options={SLPEarnedData.options} series={SLPEarnedData.series} height={472} />
       </LineChartWrapper>
       <Row>
         <Col span={18}>
@@ -329,7 +468,46 @@ const Home = () => {
             <Table columns={LeaderboardColumns} dataSource={LeaderboardData} />
           </TableWrapper>
         </Col>
-        <Col span={6}>col-12</Col>
+        <Col span={6}>
+          <LatestScholar>
+            <LatestScholarText>Latest Scholar</LatestScholarText>
+            <ScholarInfo>
+              <Avatar>U</Avatar>
+              <ScholarText>
+                <ScholarName>Jacob Jones</ScholarName>
+                <ScholarEmail>john@gmail.com</ScholarEmail>
+              </ScholarText>
+            </ScholarInfo>
+            <ScholarInfo>
+              <Avatar>USER</Avatar>
+              <ScholarText>
+                <ScholarName>Jones Brown</ScholarName>
+                <ScholarEmail>john@gmail.com</ScholarEmail>
+              </ScholarText>
+            </ScholarInfo>
+            <ScholarInfo>
+              <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+              <ScholarText>
+                <ScholarName>Jack Brown</ScholarName>
+                <ScholarEmail>john@gmail.com</ScholarEmail>
+              </ScholarText>
+            </ScholarInfo>
+            <ScholarInfo>
+              <Avatar>USER</Avatar>
+              <ScholarText>
+                <ScholarName>Tom Cruise</ScholarName>
+                <ScholarEmail>john@gmail.com</ScholarEmail>
+              </ScholarText>
+            </ScholarInfo>
+            <ScholarInfo>
+              <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+              <ScholarText>
+                <ScholarName>John Brown</ScholarName>
+                <ScholarEmail>john@gmail.com</ScholarEmail>
+              </ScholarText>
+            </ScholarInfo>
+          </LatestScholar>
+        </Col>
       </Row>
     </div>
   );
