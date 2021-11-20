@@ -55,7 +55,7 @@ const SettingsIcon = () => (
 const dashBoardNavTree = [
   {
     key: "dashboard",
-    path: `${APP_PREFIX_PATH}/dashboard`,
+    path: `/dashboard`,
     title: "dashboard",
     icon: dashboardIcon,
     breadcrumb: false,
@@ -63,7 +63,7 @@ const dashBoardNavTree = [
   },
   {
     key: "Scholars",
-    path: `${APP_PREFIX_PATH}/Scholars`,
+    path: `/Scholars`,
     title: "Scholars",
     icon: ScholarsIcon,
     breadcrumb: false,
@@ -71,7 +71,7 @@ const dashBoardNavTree = [
   },
   {
     key: "Leaderboard",
-    path: `${APP_PREFIX_PATH}/Leaderboard`,
+    path: `/Leaderboard`,
     title: "Leaderboard",
     icon: LeaderboardIcon,
     breadcrumb: false,
@@ -79,7 +79,7 @@ const dashBoardNavTree = [
   },
   {
     key: "payment",
-    path: `${APP_PREFIX_PATH}/payment`,
+    path: `/payment`,
     title: "Payments",
     icon: paymentIcon,
     breadcrumb: false,
@@ -87,7 +87,7 @@ const dashBoardNavTree = [
   },
   {
     key: "Settings",
-    path: `${APP_PREFIX_PATH}/Settings`,
+    path: `/Settings`,
     title: "Settings",
     icon: SettingsIcon,
     breadcrumb: false,
