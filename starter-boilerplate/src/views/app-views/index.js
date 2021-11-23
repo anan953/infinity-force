@@ -7,8 +7,8 @@ export const AppViews = () => {
   return (
     <Suspense fallback={<Loading cover="content" />}>
       <Switch>
-        <Route path={`/dashboard`} component={lazy(() => import(`./home`))} />
-        <Route path={`/Scholars`} component={lazy(() => import(`./home`))} />
+        <Route path={`/home`} component={lazy(() => import(`./home`))} />
+        <Route path={`/Scholars`} component={lazy(() => import(`./scholar`))} />
         <Route path={`/Leaderboard`} component={lazy(() => import(`./home`))} />
         <Route path={`/Settings`} component={lazy(() => import(`./home`))} />
         <Route path={`/payment`} component={lazy(() => import(`./payments`))} />

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Avatar } from "antd";
 import CustomIcon from "components/util-components/CustomIcon";
 
 const CardContent = styled.div`
@@ -54,13 +55,26 @@ const DataNumber = styled.p`
 
 const Icon = styled(CustomIcon)``;
 
-function ContentBanner({ iconSvg, number, text }) {
+const ScholarName = styled.p`
+  font-family: Neue;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.4000000059604645px;
+  text-align: left;
+  margin: 0;
+  color: #252733;
+`;
+
+function ContentBanner({ iconSvg, number, text, scholarName }) {
   return (
     <CardContent className="hover-icon">
       <Icon className="text-primary font-size-xl " svg={iconSvg} />
       <CardData>
         <DataTitle>{text}</DataTitle>
         <DataNumber>{number}</DataNumber>
+        <ScholarName>{scholarName}</ScholarName>
       </CardData>
     </CardContent>
   );

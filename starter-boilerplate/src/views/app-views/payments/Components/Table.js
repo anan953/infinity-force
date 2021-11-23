@@ -366,14 +366,14 @@ function TableData() {
     <Wrapper>
       <TableCustom
         rowKey="key"
-        pagination={{ pageSize: 6 }}
+        pagination={{ pageSize: 5 }}
         rowSelection={{ type: "checkbox" }}
         columns={LeaderboardColumns}
         dataSource={LeaderboardData}
       />
 
       <Paging>
-        Showing <b>1-6</b> from <b>{LeaderboardData.length}</b> data
+        Showing <b>1-5</b> from <b>{LeaderboardData.length}</b> data
       </Paging>
     </Wrapper>
   );
