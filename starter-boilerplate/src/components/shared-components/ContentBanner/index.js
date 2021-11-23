@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Avatar } from "antd";
 import CustomIcon from "components/util-components/CustomIcon";
 
 const CardContent = styled.div`
@@ -11,6 +10,7 @@ const CardContent = styled.div`
   border-radius: 12px;
   cursor: pointer;
   width: 100%;
+  min-height: 151px;
 
   &:hover {
     background: #ff8b00;
@@ -65,6 +65,10 @@ const ScholarName = styled.p`
   text-align: left;
   margin: 0;
   color: #252733;
+
+  ${CardContent}:hover & {
+    color: #ffffff;
+  }
 `;
 
 function ContentBanner({ iconSvg, number, text, scholarName }) {
@@ -74,7 +78,7 @@ function ContentBanner({ iconSvg, number, text, scholarName }) {
       <CardData>
         <DataTitle>{text}</DataTitle>
         <DataNumber>{number}</DataNumber>
-        <ScholarName>{scholarName}</ScholarName>
+        {scholarName && <ScholarName>{scholarName}</ScholarName>}
       </CardData>
     </CardContent>
   );
