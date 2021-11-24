@@ -25,7 +25,7 @@ const DataTitle = styled.p`
   font-family: Eurostile;
   font-size: 24px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 18px;
   letter-spacing: 0.4000000059604645px;
   text-align: left;
@@ -41,7 +41,7 @@ const DataNumber = styled.p`
   font-family: Neue;
   font-size: 36px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 54px;
   letter-spacing: 0.4000000059604645px;
   text-align: left;
