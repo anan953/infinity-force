@@ -41,7 +41,7 @@ const DataNumber = styled.p`
   font-family: Neue;
   font-size: 36px;
   font-style: normal;
-  font-weight: 900;
+  font-weight: bolder;
   line-height: 54px;
   letter-spacing: 0.4000000059604645px;
   text-align: left;
