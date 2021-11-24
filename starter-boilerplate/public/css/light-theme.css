@@ -15096,7 +15096,7 @@ _:-ms-fullscreen
   color: #455560;
   font-size: 14px;
   line-height: 1.5;
-  background-color: #fff;
+  background-color: #f2f2f2;
   background-image: none;
   border: 1px solid #e6ebf1;
   border-radius: 0.625rem;
@@ -22587,8 +22587,8 @@ span.ant-transfer-list-search-action {
 .ant-table-thead > tr > th {
   color: #1a3353;
   text-align: left;
-  background: #fff;
-  border-bottom: 1px solid #e6ebf1;
+  background-color: #fafafa;
+  /* border-bottom: 1px solid #e6ebf1; */
   transition: background 0.3s ease;
 }
 .ant-table-thead > tr > th[colspan]:not([colspan="1"]),
@@ -23122,10 +23122,12 @@ tr.ant-table-expanded-row .ant-descriptions-view table {
   border-top-right-radius: 0.625rem;
 }
 .ant-table-container table > thead > tr:first-child th:first-child {
-  border-top-left-radius: 0.625rem;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 .ant-table-container table > thead > tr:first-child th:last-child {
-  border-top-right-radius: 0.625rem;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 .ant-table-footer {
   border-radius: 0 0 0.625rem 0.625rem;
@@ -27552,7 +27554,7 @@ tr > .ant-picker-cell-in-view.ant-picker-cell-range-hover:first-child::after {
 }
 .ant-card-type-inner .ant-card-head,
 .ant-table-fixed-header .ant-table-thead > tr > th {
-  background: #f7f7f8;
+  background-color: #fafafa;
 }
 .ant-picker-calendar .ant-picker-panel .ant-picker-body {
   padding: 10px 0;

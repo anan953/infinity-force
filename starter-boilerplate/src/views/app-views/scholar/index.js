@@ -3,8 +3,14 @@ import styled from "styled-components";
 import { Table, Avatar, Col, Row } from "antd";
 import ContentBanner from "components/shared-components/ContentBanner";
 import SearchSection from "./Components/SearchSection";
-import { LatestScholarIcon, AverageWinRateIcon, AverageScholarMMRIcon, AverageDailySLPIcon, TotalScholarEarningsIcon, TotalScholarsIcon } from "./Components/icons";
-// import LatestScholarIcon from "assets/svg/avatar.svg";
+import {
+  LatestScholarIcon,
+  AverageWinRateIcon,
+  AverageScholarMMRIcon,
+  AverageDailySLPIcon,
+  TotalScholarEarningsIcon,
+  TotalScholarsIcon,
+} from "./Components/icons";
 
 const TableData = [
   {
@@ -294,7 +300,12 @@ const Home = () => {
       <Row gutter={[32, 15.97]}>
         {listDetail.map((item, i) => (
           <Col lg={8} md={24} sm={24} xs={24} key={i}>
-            <ContentBanner iconSvg={item.icon} number={item.number} text={item.text} scholarName={item.scholarName} />
+            <ContentBanner
+              iconSvg={item.icon}
+              number={item.number}
+              text={item.text}
+              scholarName={item.scholarName}
+            />
           </Col>
         ))}
       </Row>
@@ -303,7 +314,11 @@ const Home = () => {
 
       <Row>
         <Col lg={24} sm={24} xs={24}>
-          <TableCustom pagination={{ pageSize: 9 }} columns={TableColumns} dataSource={TableData} />
+          <TableCustom
+            pagination={{ pageSize: 9 }}
+            columns={TableColumns}
+            dataSource={TableData}
+          />
 
           <Paging>
             Showing <b>1-9</b> from <b>{TableData.length}</b> data

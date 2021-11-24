@@ -43,6 +43,7 @@ const Button = styled.div`
 const InputCustom = styled(Input)`
   padding-left: 30px;
   border-radius: 12px;
+  background-color: #f2f2f2;
 
   &.ant-input-affix-wrapper > input.ant-input {
     padding-left: 7px;
@@ -65,6 +66,7 @@ function SearchSection({ showModal }) {
                 svg={IconSearch}
               />
             }
+            style={{ backgroundColor: "#f2f2f2" }}
             placeholder="Search scholar here..."
           />
         </Col>

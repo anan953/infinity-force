@@ -20,7 +20,6 @@ const BtnEdit = styled.div`
   align-items: center;
   cursor: pointer;
 `;
-
 const DataText = styled.div`
   font-family: Neue;
   font-style: normal;
