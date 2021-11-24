@@ -9,7 +9,10 @@ export const AppViews = () => {
       <Switch>
         <Route path={`/home`} component={lazy(() => import(`./home`))} />
         <Route path={`/Scholars`} component={lazy(() => import(`./scholar`))} />
-        <Route path={`/Leaderboard`} component={lazy(() => import(`./home`))} />
+        <Route
+          path={`/Leaderboard`}
+          component={lazy(() => import(`./leaderboard`))}
+        />
         <Route path={`/Settings`} component={lazy(() => import(`./home`))} />
         <Route path={`/payment`} component={lazy(() => import(`./payments`))} />
         <Redirect from={`${APP_PREFIX_PATH}`} to={`/home`} />

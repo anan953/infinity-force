@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 `;
 
 const Tiltle = styled.div`
-  font-family: Neue Haas Unica Pro;
+  font-family: Neue;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -31,8 +31,17 @@ const ListUser = styled.div`
 `;
 
 const Icon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15 5L13.59 6.41L18.17 11H2V13H18.17L13.58 17.59L15 19L22 12L15 5Z" fill="#929292" />
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 5L13.59 6.41L18.17 11H2V13H18.17L13.58 17.59L15 19L22 12L15 5Z"
+      fill="#929292"
+    />
   </svg>
 );
 
@@ -48,7 +57,12 @@ function LatestScholar() {
       </Tiltle>
       <ListUser>
         {listUser.map((item) => (
-          <Avatar style={{ marginRight: 27, marginBottom: 10 }} size={54} key={item} src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+          <Avatar
+            style={{ marginRight: 27, marginBottom: 10 }}
+            size={54}
+            key={item}
+            src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+          />
         ))}
       </ListUser>
     </Wrapper>
