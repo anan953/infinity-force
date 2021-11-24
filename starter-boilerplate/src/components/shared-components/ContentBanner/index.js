@@ -23,7 +23,7 @@ const CardData = styled.span`
 
 const DataTitle = styled.p`
   font-family: Eurostile;
-  font-size: 18px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: 18px;
